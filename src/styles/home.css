@@ -116,6 +116,11 @@ main {
     content: url("../assets/check.svg");
 }
 
+.input-task:checked ~ .task-name{
+    color: rgba(0, 0, 0, 0.54);
+    text-decoration: line-through;
+}
+
 .div-task {
     display: flex;
     padding: 16px;
