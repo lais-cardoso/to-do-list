@@ -110,10 +110,12 @@ main {
     border-radius: 4px;
     border: 1px solid #D7DDE9;
     background: #FFF;
+    cursor: url("../assets/cursors.svg"), auto;
 }
 
 .input-task:checked{
     content: url("../assets/check.svg");
+    cursor: url("../assets/cursors.svg"), auto;
 }
 
 .input-task:checked ~ .task-name{
