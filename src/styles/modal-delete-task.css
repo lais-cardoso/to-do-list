@@ -1,0 +1,81 @@
+.content-delete-task{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 450px;
+    padding: 32px;
+    gap: 32px;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+    @media screen and (max-width: 426px) {
+        height: 100%;
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 24px;
+    }
+}
+
+.title-delete-task{
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.48px;
+}
+
+.paragraph-delete-task{
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.32px;
+}
+
+.buttons-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    @media screen and (max-width: 426px) {
+        flex-direction: column;
+    }
+}
+
+.cancel-button{
+    border-radius: 8px;
+    background: #E7EEFB;
+    padding: 16px 24px;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.32px;
+    gap: 8px;
+    flex: 1 0 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.delete-button{
+    padding: 16px 24px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
+    border: none;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.32px;
+    cursor: pointer;
+    flex: 1 0 0;
+    width: 100%;
+}
