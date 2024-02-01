@@ -1,6 +1,6 @@
 "use client"
 
-import Home from "@/components/Home"
+import ModalDeleteTask from "@/components/ModalDeleteTask"
 import { Inter } from 'next/font/google'
 
 const inter = Inter({
@@ -9,11 +9,11 @@ const inter = Inter({
 })
 
 
-export default function HomePage() {
+export default function DeleteTask() {
     return (
         <>
         <div className={inter.className}>
-            <Home/>
+            <ModalDeleteTask/>
         </div>
         </>
     )
