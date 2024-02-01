@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "../styles/globals.css";
 
-const inter = Inter({
+const inter = Inter_Tight({
    subsets: ["latin"], 
    weight: ['400','500']
 });
@@ -11,10 +11,10 @@ export const metadata = {
   description: "Projeto desafio do Processo Seletivo da Empresa Legaplan.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({children, modal}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}{modal}</body>
     </html>
   );
 }
