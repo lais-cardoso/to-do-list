@@ -9,7 +9,7 @@ export default function ModalNewTask(){
     const router = useRouter()
     return(
         <div className="modal">
-            <main className="content-new-task ">
+            <main className="content-new-task">
                     <h1 className="title">Nova tarefa</h1>
                     <section className="section-title-input">
                         <h3 className="subtitle">Título</h3>
