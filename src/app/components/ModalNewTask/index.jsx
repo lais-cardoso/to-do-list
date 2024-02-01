@@ -8,7 +8,8 @@ import { useRouter } from 'next/navigation'
 export default function ModalNewTask(){
     const router = useRouter()
     return(
-            <main className="content-new-task">
+        <div className="modal">
+            <main className="content-new-task ">
                     <h1 className="title">Nova tarefa</h1>
                     <section className="section-title-input">
                         <h3 className="subtitle">Título</h3>
@@ -19,5 +20,6 @@ export default function ModalNewTask(){
                         <button className="add-button">Adicionar</button>
                     </section>
             </main> 
+        </div>
     )
 }
