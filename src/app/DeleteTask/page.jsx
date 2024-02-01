@@ -1,6 +1,6 @@
 "use client"
 
-import ModalDeleteTask from "@/app/components/ModalDeleteTask"
+import ModalDeleteTask from "@/components/ModalDeleteTask"
 
 export default function DeleteTask() {
     return (

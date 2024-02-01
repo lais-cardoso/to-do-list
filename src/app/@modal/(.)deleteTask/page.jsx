@@ -1,5 +1,5 @@
-import Modal from '@/app/components/ModalDeleteTask'
-import DeleteTask from "@/app/components/ModalDeleteTask"
+import Modal from '@/components/ModalDeleteTask'
+import DeleteTask from "@/components/ModalDeleteTask"
  
 export default function Page() {
   return (

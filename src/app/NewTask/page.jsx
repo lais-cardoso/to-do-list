@@ -1,6 +1,6 @@
 "use client"
 
-import ModalNewTask from "@/app/components/ModalNewTask"
+import ModalNewTask from "@/components/ModalNewTask"
 
 export default function NewTask() {
     return (
