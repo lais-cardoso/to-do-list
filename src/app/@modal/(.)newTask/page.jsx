@@ -1,4 +1,4 @@
-import Modal from '@/app/components/Modal/Modal'
+import Modal from '@/app/components/ModalNewTask'
 import NewTask from '@/app/components/ModalNewTask'
  
 export default function Page() {

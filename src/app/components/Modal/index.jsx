@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import "@/styles/modal.css"
 
 export default function Modal({ children }) {
   const overlay = useRef();
@@ -40,8 +41,8 @@ export default function Modal({ children }) {
     >
       <div
         ref={wrapper}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-10/12 md:w-8/12 lg:w-1/2 p-6"
-      >
+        className=""
+      >{console.log("oi")}
         {children}
       </div>
     </div>
