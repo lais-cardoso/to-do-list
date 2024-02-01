@@ -1,20 +1,11 @@
 "use client"
 
-import ModalNewTask from "@/components/ModalNewTask"
-import { Inter } from 'next/font/google'
-
-const inter = Inter({
-    subsets: ['latin'],
-    weight: ['400', '500']
-})
-
+import ModalNewTask from "@/app/components/ModalNewTask"
 
 export default function NewTask() {
     return (
-        <>
-        <div className={inter.className}>
+        <div>
             <ModalNewTask/>
         </div>
-        </>
     )
 }

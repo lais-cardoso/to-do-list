@@ -54,15 +54,11 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
 
     @media screen and (max-width: 426px) {
         margin: 24px 24px 0 24px;
     }
-}
-
-a {
-    display: flex;
-    justify-content: center;
 }
 
 .content {
@@ -97,10 +93,8 @@ a {
 .add-new-task {
     display: flex;
     width: 450px;
-    height: 51px;
     padding: 16px 24px;
     justify-content: center;
-    align-items: center;
     gap: 8px;
     flex-shrink: 0;
     border-radius: 8px;
@@ -117,14 +111,14 @@ a {
 
     @media screen and (max-width: 426px) {
         margin: 24px 24px 0 24px;
+        width: 100%;
     }
 }
 
 .input-task {
     appearance: none;
-    min-width: 24px;
     display: flex;
-    padding: 3px;
+    padding: 3px 3px;
     flex: 1 0 0;
     cursor: pointer;
     border-radius: 4px;
@@ -172,26 +166,4 @@ a {
     line-height: normal;
     letter-spacing: -0.32px;
     width: 274px;
-}
-
-/* -------------------------------------- */
-
-.modal {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.80);
-    transition: all 0.4s;
-}
-
-.modal:target{
-    visibility: visible;
-    opacity: 1;
 }
