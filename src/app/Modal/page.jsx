@@ -1,11 +1,11 @@
 "use client"
 
-import Modal from "@/components/Modal"
+import ModalComponent from "@/components/Modal"
 
 export default function Modal() {
     return (
         <div>
-            <Modal/>
+            <ModalComponent/>
         </div>
     )
 }

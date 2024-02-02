@@ -1,7 +1,7 @@
 "use client";
 import "@/styles/modal.css"
 
-export default function Modal({ children }) {
+export default function ModalComponent({ children }) {
   return (
   <div className="modal">{children}</div>
   );
