@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -14,6 +14,26 @@ import TrashLogo from '@/assets/trash.svg'
 
 export default function Home() {
     const router = useRouter()
+
+    const [listData, setListData] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        const storage = localStorage.getItem("to-do-list")?.split(",")
+        if(storage){
+            setListData(storage)
+
+        }
+        setLoading(true)
+    }, [])
+
+    useEffect(() => {
+        if(loading){
+            localStorage.setItem("to-do-list", listData)
+
+        }
+        
+    },[listData])
 
     return (
         <>
@@ -30,39 +50,65 @@ export default function Home() {
                 <article className="task">
                     <section className="content">
                         <h3 className="date">Suas tarefas de hoje</h3>
+                        {listData.map((element, i) =>{
+                            const val = element.split("@")
+                            return (
+                                <>
+                                {val[1]=="false" && (
+                                    
+                                    <section className="div-task">
+                                        <input value={val[1]} id={element} type="checkbox" className="input-task" 
+                                        
+                                        onChange={(e) => {
+                                            val[1] = document.getElementById(element).checked? "true" : "false"
+                                            console.log(val[1])
+                                            const aux = listData
+                                            aux[i] = val.toString().replace(",", "@")
+                                            console.log(aux[i])
+                                            setListData(aux)
 
-                        <section className="div-task">
-                            <input type="checkbox" className="input-task" />
-                            <p className="task-name">Lavar as mãos</p>
-                            <Link href="/DeleteTask">
-                                <Image src={TrashLogo} alt="trash-logo" width={24} height={24} />
-                            </Link>
-                        </section>
-                        <section className="div-task">
-                            <input type="checkbox" className="input-task" />
-                            <p className="task-name">Fazer um bolo</p>
-                            <Link href="/DeleteTask">
-                                <Image src={TrashLogo} alt="trash-logo" width={24} height={24} />
-                            </Link>
-                        </section>
-                        <section className="div-task">
-                            <input type="checkbox" className="input-task" />
-                            <p className="task-name">Lavar a louça</p>
-                            <Link href="/DeleteTask">
-                                <Image src={TrashLogo} alt="trash-logo" width={24} height={24} />
-                            </Link>
-                        </section>
+                                        }}/>
+                                        <p className="task-name">{val[0]}</p>
+                                        <Link href={`/DeleteTask?pos=${i}`}>
+                                            <Image src={TrashLogo} alt="trash-logo" width={24} height={24} />
+                                        </Link>
+                                    </section>
+                                )}
+                                </>
+                            )
+                        })}
+                        
 
 
                         <h3 className="date">Tarefas finalizadas</h3>
 
-                        <section className="div-task">
-                            <input type="checkbox" className="input-task" />
-                            <p className="task-name">Levar o lixo para fora</p>
-                            <Link href="/DeleteTask">
-                                <Image src={TrashLogo} alt="trash-logo" width={24} height={24} />
-                            </Link>
-                        </section>
+                        {listData.map((element,i) =>{
+                             const val = element.split("@")
+                            return (
+                                <>
+                                {val[1]=="true" && (
+                                    
+                                    <section className="div-task">
+                                        <input value={val[1]} id={element} type="checkbox" className="input-task" 
+                                        
+                                        onChange={(e) => {
+                                            val[1] = document.getElementById(element).checked? "true" : "false"
+                                            
+                                            const aux = listData
+                                            aux[i] = val.toString().replace(",", "@")
+                                            
+                                            setListData(aux)
+
+                                        }}/>
+                                        <p className="task-name">{val[0]}</p>
+                                        <Link href={`/DeleteTask?pos=${i}`}>
+                                            <Image src={TrashLogo} alt="trash-logo" width={24} height={24} />
+                                        </Link>
+                                    </section>
+                                )}
+                                </>
+                            )
+                        })}
 
                     </section>
                 </article>
